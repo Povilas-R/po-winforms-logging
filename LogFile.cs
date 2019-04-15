@@ -23,9 +23,10 @@ namespace Po.Winforms.Logging
             try
             {
                 File.AppendAllText(
-                    (!string.IsNullOrEmpty(FileNameDatePattern)
-                    ? DateTime.Now.ToString(FileNameDatePattern)
-                    : "") + FileName,
+                    Path.Combine(Directory,
+                        (!string.IsNullOrEmpty(FileNameDatePattern)
+                        ? DateTime.Now.ToString(FileNameDatePattern)
+                        : "") + FileName),
                     GetInfoLine(RecordDatePattern, info));
                 return true;
             }

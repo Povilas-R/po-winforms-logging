@@ -61,6 +61,13 @@ namespace Po.Winforms.Logging
         [DefaultValue("Log.txt")]
         [Description("Log file name.")]
         public string FileName { get; set; } = "Log.txt";
+        /// <summary>
+        /// Log file output directory.
+        /// </summary>
+        [Category("Output")]
+        [DefaultValue(@".\")]
+        [Description("Log file output directory.")]
+        public string Directory { get; set; } = @".\";
 
         /// <summary>
         /// The <see cref="TextBox"/> used for logging.
@@ -70,7 +77,7 @@ namespace Po.Winforms.Logging
         [Description("TextBox for logging.")]
         public TextBox LogBox { get; set; } = null;
         /// <summary>
-        /// The <see cref="System.Windows.Forms.Form"/> used for logging.
+        /// The <see cref="Form"/> used for logging.
         /// </summary>
         [Category("Controls")]
         [DefaultValue(null)]
